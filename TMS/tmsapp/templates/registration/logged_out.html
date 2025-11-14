@@ -1,0 +1,12 @@
+{% extends "tmsapp/base.html" %}
+{% block content %}
+
+<h3>Logout</h3>
+<p>Are you sure you want to log out?</p>
+
+<form method="post" action="/accounts/logout/">
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">Logout</button>
+</form>
+
+{% endblock %}

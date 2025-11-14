@@ -1,0 +1,35 @@
+{% extends "tmsapp/base.html" %}
+{% block content %}
+
+<h2 class="mb-3">Manager Dashboard</h2>
+
+<a href="/task/new/" class="btn btn-primary mb-3">Assign New Task</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>Assigned To</th>
+            <th>Status</th>
+            <th>Due</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for t in tasks %}
+        <tr>
+            <td>{{ t.title }}</td>
+            <td>{{ t.assigned_to.username }}</td>
+            <td>{{ t.status }}</td>
+            <td>{{ t.due_date }}</td>
+            <td>
+                <a href="/task/{{ t.id }}/edit/" class="btn btn-sm btn-warning">Edit</a>
+                <a href="/task/{{ t.id }}/" class="btn btn-sm btn-info">View</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

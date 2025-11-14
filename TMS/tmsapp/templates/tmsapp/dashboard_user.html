@@ -1,0 +1,24 @@
+{% extends "tmsapp/base.html" %}
+{% block content %}
+<h2>Your Tasks</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Due</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for t in tasks %}
+    <tr>
+        <td>{{ t.title }}</td>
+        <td>{{ t.status }}</td>
+        <td>{{ t.due_date }}</td>
+        <td>
+            <a href="/task/{{ t.id }}/edit/" class="btn btn-sm btn-primary">Update</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

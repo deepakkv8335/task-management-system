@@ -1,0 +1,29 @@
+{% extends 'tmsapp/base.html' %}
+{% block content %}
+<h2>Update Task — {{ task.title }}</h2>
+
+<p><strong>Assigned to:</strong> {{ task.assigned_to.username }}</p>
+<p><strong>Description:</strong> {{ task.description }}</p>
+<p><strong>Due:</strong> {{ task.due_date }}</p>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-primary" type="submit">Save</button>
+    <a href="{% url 'task_detail' task.id %}" class="btn btn-secondary">Cancel</a>
+</form>
+
+<hr>
+<h4>Remarks</h4>
+<ul class="list-group">
+    {% for r in task.remarks.all %}
+    <li class="list-group-item">
+        <strong>{{ r.user.username }}</strong> <small class="text-muted">{{ r.created_at }}</small>
+        <div>{{ r.text|linebreaksbr }}</div>
+    </li>
+    {% empty %}
+    <li class="list-group-item text-muted">No remarks yet.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

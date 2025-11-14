@@ -1,0 +1,32 @@
+{% extends 'tmsapp/base.html' %}
+{% block content %}
+<h2>{{ task.title }}</h2>
+
+<p><strong>Assigned to:</strong> {{ task.assigned_to.username }}</p>
+<p><strong>Status:</strong> {{ task.status }}</p>
+<p><strong>Due:</strong> {{ task.due_date }}</p>
+<hr>
+<h4>Description</h4>
+<p>{{ task.description|linebreaksbr }}</p>
+
+<hr>
+<h4>Remarks</h4>
+<ul class="list-group mb-3">
+    {% for r in remarks %}
+    <li class="list-group-item">
+        <strong>{{ r.user.username }}</strong>
+        <small class="text-muted"> — {{ r.created_at }}</small>
+        <div>{{ r.text|linebreaksbr }}</div>
+    </li>
+    {% empty %}
+    <li class="list-group-item text-muted">No remarks yet.</li>
+    {% endfor %}
+</ul>
+
+{% if user.is_authenticated and user == task.assigned_to %}
+<p>
+    <a href="{% url 'task_edit' task.id %}" class="btn btn-primary">Update Status / Add Remark</a>
+</p>
+{% endif %}
+
+{% endblock %}
