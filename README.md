@@ -2,6 +2,10 @@
 
 A web-based task management application built with **Python** and **Django** that helps users create, organize, update, and manage daily tasks through a simple and responsive interface.
 
+## Live Demo
+
+Coming Soon
+
 ## Features
 
 - Create new tasks
