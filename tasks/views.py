@@ -15,16 +15,16 @@ def is_user(user):
 def dashboard(request):
 
     if request.user.is_superuser:
-        return render(request, "tmsapp/dashboard_admin.html")
+        return render(request, "tasks/dashboard_admin.html")
 
     if is_manager(request.user):
         tasks = Task.objects.all()
-        return render(request, "tmsapp/dashboard_manager.html", {
+        return render(request, "tasks/dashboard_manager.html", {
             "tasks": tasks
         })
 
     tasks = Task.objects.filter(assigned_to=request.user)
-    return render(request, "tmsapp/dashboard_user.html", {
+    return render(request, "tasks/dashboard_user.html", {
         "tasks": tasks
     })
 
@@ -41,7 +41,7 @@ def create_task(request):
         task.save()
         return redirect("dashboard")
 
-    return render(request, "tmsapp/task_edit.html", {"form": form})
+    return render(request, "tasks/task_edit.html", {"form": form})
 
 @login_required
 def edit_task(request, task_id):
@@ -59,7 +59,7 @@ def edit_task(request, task_id):
             if remark_text:
                 TaskRemark.objects.create(task=task, user=request.user, text=remark_text)
             return redirect('task_detail', task_id=task.id)
-        return render(request, "tmsapp/task_user_update.html", {"form": form, "task": task})
+        return render(request, "tasks/task_user_update.html", {"form": form, "task": task})
 
     if not (request.user.is_superuser or is_manager(request.user)):
         return HttpResponseForbidden("You do not have permission to edit this task.")
@@ -69,11 +69,11 @@ def edit_task(request, task_id):
         form.save()
         return redirect('task_detail', task_id=task.id)
 
-    return render(request, "tmsapp/task_edit.html", {"form": form, "task": task})
+    return render(request, "tasks/task_edit.html", {"form": form, "task": task})
 
 @login_required
 def task_detail(request, task_id):
     task = get_object_or_404(Task, id=task_id)
     remarks = task.remarks.select_related('user').all()
 
-    return render(request, "tmsapp/task_detail.html", {"task": task, "remarks": remarks})
+    return render(request, "tasks/task_detail.html", {"task": task, "remarks": remarks})
