@@ -1,0 +1,311 @@
+    /* Login */
+
+.login-page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#4338CA,#6D28D9);
+    padding:20px;
+}
+
+.login-card{
+    width:470px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:28px;
+    padding:42px;
+    color:white;
+    box-shadow:0 25px 60px rgba(0,0,0,.25);
+}
+
+.login-header h1{
+    font-size:46px;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.login-header p{
+    color:#E9E5FF;
+    margin-bottom:28px;
+}
+
+.role-cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-bottom:30px;
+}
+
+.role{
+    text-align:center;
+    padding:18px 12px;
+    border-radius:16px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.08);
+    transition:.25s;
+}
+
+.role:hover{
+    transform:translateY(-3px);
+    background:rgba(255,255,255,.15);
+}
+
+.role-icon{
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+.role span{
+    font-size:14px;
+    font-weight:600;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:white;
+}
+
+.form-group input{
+    width:100%;
+    padding:14px 16px;
+    border:none;
+    border-radius:14px;
+    background:rgba(255,255,255,.95);
+    color:#111827;
+    font-size:15px;
+}
+
+.form-group input:focus{
+    outline:none;
+    box-shadow:0 0 0 4px rgba(255,255,255,.18);
+}
+
+.login-btn{
+    width:100%;
+    margin-top:10px;
+    padding:15px;
+    border:none;
+    border-radius:14px;
+    background:white;
+    color:#4F46E5;
+    font-weight:700;
+    font-size:16px;
+    transition:.25s;
+}
+
+.login-btn:hover{
+    transform:translateY(-2px);
+    background:#F8FAFC;
+}
+
+.login-footer{
+    margin-top:22px;
+    text-align:center;
+    color:#DDD6FE;
+}
+
+@media (max-width:500px){
+
+    .login-card{
+        width:100%;
+        padding:30px;
+    }
+
+    .login-header h1{
+        font-size:38px;
+    }
+
+    .role-cards{
+        grid-template-columns:1fr;
+    }
+
+}
+
+.card{
+    transition:.25s ease;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12)!important;
+}
+
+.badge{
+    font-size:.75rem;
+    padding:8px 10px;
+    border-radius:999px;
+}
+
+.form-control{
+    border-radius:14px;
+}
+
+.btn{
+    border-radius:12px;
+}
+
+.employee-dashboard{
+    padding-bottom:30px;
+}
+
+.employee-dashboard .card{
+    transition:.25s ease;
+}
+
+.employee-dashboard .card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12)!important;
+}
+
+.employee-dashboard .badge{
+    font-size:.75rem;
+    padding:8px 10px;
+    border-radius:999px;
+}
+
+.admin-dashboard{
+    padding-bottom:30px;
+}
+
+.admin-dashboard .card{
+    transition:.25s ease;
+}
+
+.admin-dashboard .card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12)!important;
+}
+
+.admin-dashboard .btn-outline-primary{
+    border-radius:14px;
+    border-color:#4F46E5;
+    color:#4F46E5;
+    font-weight:600;
+}
+
+.admin-dashboard .btn-outline-primary:hover{
+    background:#4F46E5;
+    color:white;
+}
+
+.task-detail-page{
+    padding-bottom:30px;
+}
+
+.task-detail-page .card{
+    transition:.25s ease;
+}
+
+.task-detail-page .card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12)!important;
+}
+
+.task-detail-page .badge{
+    border-radius:999px;
+    font-size:.8rem;
+}
+
+.remark-item:last-child{
+    border-bottom:none!important;
+}
+
+/* Task Form */
+
+.task-form-page{
+    padding-bottom:40px;
+}
+
+.task-form-page .card{
+    transition:.25s ease;
+}
+
+.task-form-page .card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 40px rgba(0,0,0,.12)!important;
+}
+
+.task-form-page input,
+.task-form-page select,
+.task-form-page textarea{
+    width:100%;
+    border:1px solid #E5E7EB;
+    border-radius:14px;
+    padding:12px 14px;
+    font-size:15px;
+    transition:.25s;
+}
+
+.task-form-page input:focus,
+.task-form-page select:focus,
+.task-form-page textarea:focus{
+    border-color:#4F46E5;
+    box-shadow:0 0 0 4px rgba(79,70,229,.12);
+    outline:none;
+}
+
+.task-form-page textarea{
+    min-height:140px;
+    resize:vertical;
+}
+
+.task-form-page .btn{
+    border-radius:12px;
+    font-weight:600;
+}
+
+/* Task Update */
+
+.task-update-page{
+    padding-bottom:40px;
+}
+
+.task-update-page .card{
+    transition:.25s ease;
+}
+
+.task-update-page .card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 40px rgba(0,0,0,.12)!important;
+}
+
+.task-update-page input,
+.task-update-page select,
+.task-update-page textarea{
+    width:100%;
+    border:1px solid #E5E7EB;
+    border-radius:14px;
+    padding:12px 14px;
+    font-size:15px;
+    transition:.25s;
+}
+
+.task-update-page input:focus,
+.task-update-page select:focus,
+.task-update-page textarea:focus{
+    border-color:#4F46E5;
+    box-shadow:0 0 0 4px rgba(79,70,229,.12);
+    outline:none;
+}
+
+.task-update-page textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.task-update-page .btn{
+    border-radius:12px;
+    font-weight:600;
+}
+
+.task-update-page .remark-item:last-child{
+    border-bottom:none!important;
+}

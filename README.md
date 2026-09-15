@@ -1,6 +1,6 @@
-# Task Management System
+# TaskFlow – Employee Task Management System
 
-A web-based task management application built with **Python** and **Django** that helps users create, organize, update, and manage daily tasks through a simple and responsive interface.
+A role-based task management web application built with **Python** and **Django** that enables **Admins**, **Managers**, and **Employees** to collaborate through task assignment, status tracking, and progress updates in a modern, responsive interface.
 
 ## Live Demo
 
@@ -8,11 +8,13 @@ Coming Soon
 
 ## Features
 
-- Create new tasks
-- Update existing tasks
-- Delete completed tasks
-- Responsive user interface
+- Role-based authentication (Admin, Manager, Employee)
+- Manager task assignment and management
+- Employee task status updates
+- Task remarks and activity tracking
+- Responsive modern UI with Bootstrap
 - SQLite database integration
+- Django Admin Panel for system management
 
 ## Tech Stack
 
@@ -20,33 +22,58 @@ Coming Soon
 - Django
 - HTML
 - CSS
-- JavaScript
+- Bootstrap 5
 - SQLite
 
 ## Screenshots
 
-### Home
+### Login
 
-![Home](screenshots/home.png)
+![Login](screenshots/login.png)
 
-### Task List
+### Manager Dashboard
 
-![Login Page](screenshots/login.png)
+![Manager Dashboard](screenshots/manager-dashboard.png)
 
-### Add Task
+### Manager Task View
 
-![Update Task](screenshots/update-task.png)
+![Manager Task View](screenshots/manager-task-view.png)
+
+### Employee Dashboard
+
+![Employee Dashboard](screenshots/user-dashboard.png)
+
+### Employee Task Update
+
+![Employee Task Update](screenshots/user-task-update.png)
+
+### Admin Dashboard
+
+![Admin Dashboard](screenshots/admin-dashboard.png)
 
 ## Project Structure
 
 ```text
 task-management-system/
-├── app/
-├── templates/
-├── static/
+├── core/
+├── tasks/
+│   ├── migrations/
+│   ├── static/
+│   │   └── css/
+│   ├── templates/
+│   │   ├── registration/
+│   │   └── tasks/
+│   ├── forms.py
+│   ├── models.py
+│   ├── urls.py
+│   └── views.py
+├── screenshots/
 ├── db.sqlite3
 ├── manage.py
-└── requirements.txt
+├── requirements.txt
+├── README.md
+├── LICENSE
+└── .gitignore
 ```
 
 ## Installation
@@ -87,12 +114,22 @@ python manage.py runserver
 
 Open `http://127.0.0.1:8000`.
 
+## Default Demo Accounts
+
+| Role | Username | Password |
+|------|----------|----------|
+| Admin | `admin` | `admin` |
+| Manager | `manager` | `manager` |
+| Employee | `user` | `user` |
+| Employee | `user1` | `user1` |
+
 ## Future Improvements
 
-- User authentication
-- Task categories
-- Due dates and reminders
-- Search and filtering
+- PostgreSQL production database (Neon)
+- Render deployment
+- Task search and filtering
+- Email notifications
+- Dashboard analytics
 
 ## Author
 
