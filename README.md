@@ -1,55 +1,80 @@
 # TaskFlow – Employee Task Management System
 
-A role-based task management web application built with **Python** and **Django** that enables **Admins**, **Managers**, and **Employees** to collaborate through task assignment, status tracking, and progress updates in a modern, responsive interface.
+A full-stack Django-based Employee Task Management System that enables **Admins**, **Managers**, and **Employees** to collaborate through task assignment, status tracking, and progress updates in a modern, responsive interface.
+
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+![Django](https://img.shields.io/badge/Django-Framework-green?logo=django)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple?logo=bootstrap)
+![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?logo=sqlite)
+![Render](https://img.shields.io/badge/Render-Deployed-46E3B7?logo=render)
 
 ## Live Demo
 
-Coming Soon
+🌐 **Live Website:** https://task-management-system-curd-project.onrender.com
 
 ## Features
 
-- Role-based authentication (Admin, Manager, Employee)
-- Manager task assignment and management
-- Employee task status updates
-- Task remarks and activity tracking
-- Responsive modern UI with Bootstrap
+### Admin
+
+- Manage users and system roles
+- Access the Django Admin Panel
+- Monitor system-wide operations
+
+### Manager
+
+- Create and assign tasks
+- Manage employee workloads
+- Track task progress and updates
+
+### Employee
+
+- View assigned tasks
+- Update task status
+- Submit task remarks
+
+### General
+
+- Role-based authentication
+- CRUD task management
+- Activity tracking
+- Responsive Bootstrap 5 interface
 - SQLite database integration
-- Django Admin Panel for system management
 
 ## Tech Stack
 
-- Python
-- Django
-- HTML
-- CSS
-- Bootstrap 5
-- SQLite
+| Category | Technology |
+|----------|------------|
+| **Backend** | Python, Django |
+| **Frontend** | HTML5, CSS3, Bootstrap 5 |
+| **Database** | SQLite |
+| **Version Control** | Git, GitHub |
+| **Deployment** | Render |
 
-## Screenshots
+## Project Preview
 
-### Login
+### Authentication
 
-![Login](screenshots/login.png)
+| Login |
+|-------|
+| ![Login](screenshots/login.png) |
 
-### Manager Dashboard
+### Manager
 
-![Manager Dashboard](screenshots/manager-dashboard.png)
+| Dashboard | Task View |
+|-----------|-----------|
+| ![Manager Dashboard](screenshots/manager-dashboard.png) | ![Manager Task View](screenshots/manager-task-view.png) |
 
-### Manager Task View
+### Employee
 
-![Manager Task View](screenshots/manager-task-view.png)
+| Dashboard | Task Update |
+|-----------|-------------|
+| ![Employee Dashboard](screenshots/employee-dashboard.png) | ![Employee Task Update](screenshots/employee-task-update.png) |
 
-### Employee Dashboard
+### Admin
 
-![Employee Dashboard](screenshots/user-dashboard.png)
-
-### Employee Task Update
-
-![Employee Task Update](screenshots/user-task-update.png)
-
-### Admin Dashboard
-
-![Admin Dashboard](screenshots/admin-dashboard.png)
+| Dashboard |
+|-----------|
+| ![Admin Dashboard](screenshots/admin-dashboard.png) |
 
 ## Project Structure
 
@@ -112,25 +137,36 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-Open `http://127.0.0.1:8000`.
+Open:
 
-## Default Demo Accounts
+```text
+http://127.0.0.1:8000
+```
+
+## Demo Accounts
 
 | Role | Username | Password |
 |------|----------|----------|
 | Admin | `admin` | `admin` |
 | Manager | `manager` | `manager` |
-| Employee | `user` | `user` |
 | Employee | `user1` | `user1` |
 
 ## Future Improvements
 
-- PostgreSQL production database (Neon)
-- Render deployment
-- Task search and filtering
+- PostgreSQL production database
+- Advanced task search and filtering
 - Email notifications
 - Dashboard analytics
+- Mobile-friendly enhancements
+
+## License
+
+This project is licensed under the **MIT License**.
 
 ## Author
 
 **Deepak K V**
+
+- 🌐 Portfolio: https://deepakkv8335.github.io
+- 💼 LinkedIn: https://www.linkedin.com/in/deepakkv8335
+- 💻 GitHub: https://github.com/deepakkv8335
